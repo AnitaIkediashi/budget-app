@@ -3,7 +3,7 @@ import React from "react";
 const HeroWrapper = () => {
   return <div>
     content
-    image
+    image with drop shadow
   </div>;
 };
 
