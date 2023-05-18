@@ -17,9 +17,12 @@ body {
   /* background: radial-gradient(at center, #EBF2FA, #FFFFFF); */
 }
 
-.hero-wrapper {
+.hero-bg:before {
   background-image: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);
-  clip-path: polygon(0 0, 100% 0, 100% 79%, 0% 100%);
+}
+
+.clip-path-bg::before {
+  clip-path: polygon(0 0, 100% 0, 100% 72%, 0 92%);
 }
 
 @tailwind base;
