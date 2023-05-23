@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: 'Wix Madefor Display', sans-serif;
-  /* background: radial-gradient(at center, #EBF2FA, #FFFFFF); */
+  background-color: #EBF2FA;
 }
 
 .hero-bg:before {
