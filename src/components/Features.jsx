@@ -35,8 +35,11 @@ const Features = () => {
         <div>
           {/* features */}
           {features.map(({ icon, desc, title }, index) => (
-            <Card className="flex items-center justify-center mb-5 flex-col" key={index}>
-              <div className="text-white w-6 h-6" >{icon}</div>
+            <Card
+              className="flex items-center justify-center mb-5 flex-col"
+              key={index}
+            >
+              <div className="text-white w-6 h-6">{icon}</div>
               <h3 className="font-semibold text-lg">{title}</h3>
               <p className="text-center text-dull-white">{desc}</p>
             </Card>
