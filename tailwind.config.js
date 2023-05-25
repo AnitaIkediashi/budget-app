@@ -16,6 +16,15 @@ module.exports = {
         lg: "1024px",
         xl: "1200px",
       },
+      animation: {
+        'scroll': 'scroll 30s linear infinite'
+      },
+      keyframes: {
+        'scroll': {
+          '0%': {transform: 'translateX(0)'},
+          '100%': {transform: 'translateX(calc(-400px*2.5))'}
+        },
+      }
     },
   },
   plugins: [],

@@ -40,3 +40,41 @@ export const features = [
     desc: "Budget app is secure and protect your financial information from unauthorized access.",
   },
 ];
+
+export const reviews = [
+  {
+    quoteImg: require("./assets/images/quote.png"),
+    userImg: require("./assets/images/review-1.jpg"),
+    para: "Velit odio gravida ipsum faucibus leo. Hendrerit aliquet. Pharetra Etiam pulvinar proin et amet ante viverra vulputate ipsum hendrerit. Rutrum.",
+    occupation: "Adventurer",
+    userName: "Jane Doe",
+  },
+  {
+    quoteImg: require("./assets/images/quote.png"),
+    userImg: require("./assets/images/review-2.jpg"),
+    para: "Velit odio gravida ipsum faucibus leo. Hendrerit aliquet. Pharetra Etiam pulvinar proin et amet ante viverra vulputate ipsum hendrerit. Rutrum.",
+    occupation: "Sailor",
+    userName: "Rafael Jnr",
+  },
+  {
+    quoteImg: require("./assets/images/quote.png"),
+    userImg: require("./assets/images/review-3.jpg"),
+    para: "Velit odio gravida ipsum faucibus leo. Hendrerit aliquet. Pharetra Etiam pulvinar proin et amet ante viverra vulputate ipsum hendrerit. Rutrum.",
+    occupation: "Economist",
+    userName: "Sarah Siloh",
+  },
+  {
+    quoteImg: require("./assets/images/quote.png"),
+    userImg: require("./assets/images/review-4.jpg"),
+    para: "Velit odio gravida ipsum faucibus leo. Hendrerit aliquet. Pharetra Etiam pulvinar proin et amet ante viverra vulputate ipsum hendrerit. Rutrum.",
+    occupation: "Driver",
+    userName: "Jane Miller",
+  },
+  {
+    quoteImg: require("./assets/images/quote.png"),
+    userImg: require("./assets/images/review-5.jpg"),
+    para: "Velit odio gravida ipsum faucibus leo. Hendrerit aliquet. Pharetra Etiam pulvinar proin et amet ante viverra vulputate ipsum hendrerit. Rutrum.",
+    occupation: "Builder",
+    userName: "Williams",
+  },
+];
