@@ -5,7 +5,7 @@ import {IdentificationIcon} from '@heroicons/react/24/outline'
 
 export const navLinks = [
   {
-    link: '#',
+    link: '#home',
     title: 'Home'
   },
   {

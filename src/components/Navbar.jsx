@@ -7,10 +7,10 @@ const Navbar = () => {
   
 
   return (
-    <header className="px-8 lg:px-[7%] h-20 w-full relative">
+    <header className="px-8 lg:px-[7%] h-20 w-full relative" id="home">
       <nav className="h-full flex justify-between items-center">
         {/* logo */}
-        <a href="/" className="flex items-center">
+        <a href="#home" className="flex items-center">
           <img src={logo} alt="logo" className="w-16" />
           <h1 className="inline-block -ml-2 font-extrabold lg:text-3xl md:text-2xl text-xl text-white">
             BUDGET

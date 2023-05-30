@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeImg from '../assets/images/home-img.png'
+import AOS from "aos";
+import { Link } from "react-router-dom";
 
 const HeroWrapper = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className="h-[calc(80vh-5rem)] w-full px-8 lg:px-[7%] flex items-center justify-center relative pt-10">
       <div className="h-full grid grid-cols-2 items-center gap-3">
@@ -14,9 +21,9 @@ const HeroWrapper = () => {
             Track Your Expenses, Save Money, and Reach Your Financial Goals
           </p>
           <div>
-            <a href="" className="bg-light-green px-6 py-2 font-bold text-lg rounded-md">
-              Learn More
-            </a>
+            <button className="bg-light-green px-6 py-2 font-bold text-lg rounded-md">
+              <Link to="/login">Learn More</Link>
+            </button>
           </div>
         </div>
         {/* image */}
@@ -24,6 +31,8 @@ const HeroWrapper = () => {
           src={HomeImg}
           alt="hero bg"
           className="drop-shadow-[0px_11px_7px_rgba(0,0,0,0.3)] block lg:pt-10 xl:pt-0"
+          data-aos="zoom-in-down"
+          data-aos-delay="450"
         />
       </div>
     </section>

@@ -4,7 +4,7 @@ import { reviews } from "../data";
 
 const Testimonials = () => {
   return (
-    <section className="py-14 px-8 lg:px-[7%] ">
+    <section className="py-14 px-8 lg:px-[7%]" id="reviews">
       {/* heading */}
       <Header title="Customers' Review" />
       <p className="text-center max-w-sm mx-auto py-4 text-dark-green text-lg font-medium mb-10">
