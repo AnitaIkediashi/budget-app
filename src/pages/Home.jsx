@@ -1,5 +1,5 @@
 import React from "react";
-import { Features, HeroDesktop, Testimonials, Footer } from "../components";
+import { Features, HeroDesktop, Testimonials, Footer, MobileHero } from "../components";
 
 const Home = () => {
   return (
@@ -13,8 +13,8 @@ const Home = () => {
       </section>
 
       {/* mobile */}
-      <section className="block lg:hidden">
-        hello world
+      <section className="lg:hidden block">
+        <MobileHero />
       </section>
     </>
   );
