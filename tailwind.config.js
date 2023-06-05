@@ -17,13 +17,18 @@ module.exports = {
         xl: "1200px",
       },
       animation: {
-        'scroll': 'scroll 30s linear infinite'
+        'scroll': 'scroll 30s linear infinite',
+        'fade': 'fade 2s ease-in-out 1s'
       },
       keyframes: {
         'scroll': {
           '0%': {transform: 'translateX(0)'},
           '100%': {transform: 'translateX(calc(-400px*2.5))'}
         },
+        'fade': {
+          '0%': {opacity: '0'},
+          '100%': {opacity: '1'}
+        }
       }
     },
   },

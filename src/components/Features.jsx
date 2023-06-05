@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./Header";
 import IMG1 from '../assets/images/service-three.jpg'
 import IMG2 from '../assets/images/service-one.jpg'

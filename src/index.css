@@ -32,6 +32,18 @@ body {
   /* background-position: center; */
 }
 
+.login-clip {
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  background-image: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);
+}
+
+.text-linear-grad {
+  background: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

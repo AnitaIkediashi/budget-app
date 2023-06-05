@@ -13,7 +13,7 @@ const HeroWrapper = () => {
     <section className="h-[calc(80vh-5rem)] w-full px-8 lg:px-[7%] flex items-center justify-center relative pt-10">
       <div className="h-full grid grid-cols-2 items-center gap-3">
         {/* content */}
-        <div className="flex flex-col -mt-14">
+        <div className="flex flex-col -mt-14" data-aos="fade-right" data-aos-delay="150">
           <h2 className="text-white font-bold text-5xl leading-[3.5rem]">
             Master Your Finances With Our Budgeting App:
           </h2>
