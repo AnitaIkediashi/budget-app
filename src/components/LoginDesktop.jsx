@@ -19,7 +19,7 @@ const LoginDesktop = () => {
           <img src={logo} alt="logo" className="w-full " />
         </div>
         {/* image */}
-        <div className=" lg:w-[28rem] xl:w-[40rem] h-[85%] absolute left-0 login-clip top-14 flex">
+        <div className=" lg:w-[28rem] xl:w-[30rem] h-[85%] absolute left-0 login-clip top-14 flex">
           <img
             src={loginImg}
             alt="login img"
@@ -61,7 +61,7 @@ const LoginDesktop = () => {
             </div>
             {/* submit button */}
             <button className="bg-dark-green py-3 font-semibold text-lg text-white rounded-lg hover:tracking-widest duration-300">
-              Submit
+              Login
             </button>
           </form>
           {/* forgot password  */}
@@ -78,7 +78,7 @@ const LoginDesktop = () => {
               to="/register"
               className="text-dark-green font-semibold text-base hover:tracking-widest duration-300"
             >
-              SIGN UP
+              REGISTER
             </Link>{" "}
           </p>
         </div>

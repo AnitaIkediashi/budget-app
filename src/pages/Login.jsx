@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginDesktop } from "../components";
+import { LoginDesktop, MobileLogin } from "../components";
 
 const Login = () => {
   return (
@@ -10,7 +10,9 @@ const Login = () => {
       </section>
 
       {/* mobile login */}
-      
+      <section className="block lg:hidden">
+        <MobileLogin />
+      </section>
     </>
   );
 };
