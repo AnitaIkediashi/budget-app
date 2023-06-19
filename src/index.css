@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap");
 
 /* general styles */
 * {
@@ -13,20 +13,36 @@ html {
 }
 
 body {
-  font-family: 'Wix Madefor Display', sans-serif;
-  background-color: #EBF2FA;
+  font-family: "Wix Madefor Display", sans-serif;
+  background-color: #ebf2fa;
 }
 
 .hero-bg:before {
-  background-image: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);
+  background-image: linear-gradient(
+    to right top,
+    #05668d,
+    #00778e,
+    #00857c,
+    #158f5b,
+    #679436
+  );
 }
 
 .clip-path-bg::before {
   clip-path: polygon(0 0, 100% 0, 100% 72%, 0 92%);
 }
 
+.shadow-morp {
+  box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+}
+
 .mobile-hero-bg {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.55)), url('./assets/images/mobile-img.jpg');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("./assets/images/mobile-img.jpg");
   background-repeat: no repeat;
   background-size: cover;
   /* background-position: center; */
@@ -34,15 +50,28 @@ body {
 
 .login-clip {
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  background-image: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);
+  background-image: linear-gradient(
+    to right top,
+    #05668d,
+    #00778e,
+    #00857c,
+    #158f5b,
+    #679436
+  );
 }
 
 .text-linear-grad {
-  background: linear-gradient(to right top, #05668d, #00778e, #00857c, #158f5b, #679436);;
+  background: linear-gradient(
+    to right top,
+    #05668d,
+    #00778e,
+    #00857c,
+    #158f5b,
+    #679436
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 @tailwind base;
 @tailwind components;

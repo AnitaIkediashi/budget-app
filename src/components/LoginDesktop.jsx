@@ -66,7 +66,7 @@ const LoginDesktop = () => {
           </form>
           {/* forgot password  */}
           <Link
-            to="/forgot"
+            to="/forget"
             className="float-right mt-2 text-sm font-medium text-dark-blue hover:tracking-widest duration-300"
           >
             Forgot Password?
