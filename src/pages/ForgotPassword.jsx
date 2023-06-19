@@ -1,6 +1,7 @@
 import React from "react";
 import forgetImg from '../assets/images/forget.png'
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   return (
@@ -35,6 +36,10 @@ const ForgotPassword = () => {
           <button className="bg-dark-green text-white font-semibold text-sm md:text-lg py-3 w-full rounded-lg lg:mt-5 mt-3">
             Send Instruction
           </button>
+
+          <div className="mt-10 self-start text-dark-blue font-semibold lg:text-lg md:text-base text-sm hover:underline duration-300 hover:tracking-widest">
+            <Link to="/login">Back to Login</Link>
+          </div>
         </div>
       </div>
     </section>
