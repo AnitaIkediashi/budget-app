@@ -9,6 +9,11 @@ module.exports = {
         "dull-white": "#EBF2FA",
         "dark-green": "#679436",
         "light-green": "#A5BE00",
+        "color-green-300": "#6B9080",
+        "color-green-200": "#A4C3B2",
+        "color-green-100": "#CCE3DE",
+        "color-green-50": "#EAF4F4",
+        "color-white-100": "#F6FFF8",
       },
       screens: {
         sm: "480px",
@@ -17,19 +22,19 @@ module.exports = {
         xl: "1200px",
       },
       animation: {
-        'scroll': 'scroll 30s linear infinite',
-        'fade': 'fade 2s ease-in-out 1s'
+        scroll: "scroll 30s linear infinite",
+        fade: "fade 2s ease-in-out 1s",
       },
       keyframes: {
-        'scroll': {
-          '0%': {transform: 'translateX(0)'},
-          '100%': {transform: 'translateX(calc(-400px*2.5))'}
+        scroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(calc(-400px*2.5))" },
         },
-        'fade': {
-          '0%': {opacity: '0'},
-          '100%': {opacity: '1'}
-        }
-      }
+        fade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [],
