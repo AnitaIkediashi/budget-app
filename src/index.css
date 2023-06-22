@@ -73,19 +73,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.dashboard_bg {
-  background-image: linear-gradient(
-    to right,
-    #a4c3b267,
-    #b3cfc573,
-    #c4dcd671,
-    #d6e8e665,
-    #eaf4f46c
-  );
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(6.3px);
-  /* border: 1px solid rgba(56, 180, 83, 0.12); */
-}
+
 
 @tailwind base;
 @tailwind components;
