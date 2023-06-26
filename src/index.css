@@ -73,7 +73,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
 
 @tailwind base;
 @tailwind components;
