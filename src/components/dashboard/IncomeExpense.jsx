@@ -7,7 +7,7 @@ import {
 
 const IncomeExpense = () => {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
       <UtilCard className="flex items-center flex-col justify-center">
         <ArrowUpRightIcon className="w-6" />
         <h3 className="text-color-green-300 font-bold text-lg">Income</h3>
