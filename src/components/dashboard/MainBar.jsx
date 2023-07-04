@@ -15,7 +15,7 @@ const MainBar = () => {
     <>
       <section className="h-full overflow-y-scroll overflow-x-hidden hide-scroll lg:px-7">
         {/* extras shown on mobile */}
-        <div className="lg:hidden items-center justify-between flex">
+        <div className="lg:hidden items-center justify-between flex fixed top-0 left-0 right-0 px-4 bg-[#eaf4f48a] backdrop-blur-sm">
           <Link to="/">
             <img src={logo} alt="logo" className="w-20" />
           </Link>
