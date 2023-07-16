@@ -9,10 +9,10 @@ module.exports = {
         "dull-white": "#EBF2FA",
         "dark-green": "#679436",
         "light-green": "#A5BE00",
-        "color-green-300": "#6B9080",
-        "color-green-200": "#A4C3B2",
+        "color-green-300": "#31572C",
+        "color-green-200": "#90A955",
         "color-green-100": "#CCE3DE",
-        "color-green-50": "#EAF4F4",
+        "color-green-50": "#ECF39E",
         "color-white-100": "#F6FFF8",
       },
       screens: {

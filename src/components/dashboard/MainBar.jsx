@@ -5,10 +5,9 @@ import Balance from "./Balance";
 import IncomeExpense from "./IncomeExpense";
 import CircleProgressBar from "./CircleProgressBar";
 import HistoryTransactions from "./HistoryTransactions";
-import AddIncome from "./AddIncome";
-import AddExpense from "./AddExpense";
 import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo.png'
+import AddTransactions from "./AddTransactions";
 
 const MainBar = () => {
   return (
@@ -41,9 +40,8 @@ const MainBar = () => {
           <HistoryTransactions />
         </div>
         {/* box 4 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-10">
-          <AddIncome />
-          <AddExpense />
+        <div className=" mb-10">
+          <AddTransactions />
         </div>
       </section>
     </>

@@ -26,7 +26,7 @@ const SideBar = () => {
         <ul className="flex flex-col gap-2 px-6">
           <Link
             to="/dashboard"
-            className="hover:bg-color-green-100 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
+            className="hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
           >
             <li className="flex items-center gap-1 ">
               <HomeIcon className="w-6" />
@@ -35,14 +35,14 @@ const SideBar = () => {
           </Link>
           <Link
             to="/login"
-            className="hover:bg-color-green-100 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
+            className="hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
           >
             <li className="flex items-center gap-1">
               <ArrowRightOnRectangleIcon className="w-6" />
               <span>Login</span>
             </li>
           </Link>
-          <li className="flex items-center gap-1 hover:bg-color-green-100 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium">
+          <li className="flex items-center gap-1 hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium">
             <ArrowLeftOnRectangleIcon className="w-6" />
             <span>Logout</span>
           </li>
@@ -58,7 +58,7 @@ const SideBar = () => {
             <h4 className="inline-block font-medium text-color-white-100">
               John Doe
             </h4>
-            <small className="font-extralight text-dull-white">
+            <small className="font-extralight text-color-green-50">
               Profession
             </small>
           </div>
