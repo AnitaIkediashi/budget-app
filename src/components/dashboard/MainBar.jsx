@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo.png'
 import AddTransactions from "./AddTransactions";
 
+
 const MainBar = () => {
   return (
     <>
