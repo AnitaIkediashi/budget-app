@@ -1,21 +1,33 @@
-import React, { createContext, useReducer } from "react";
-import AuthReducer from './AuthReducer'
+import React, { createContext } from "react";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth'
+import {auth} from '../firebase'
 
 export const UserContext = createContext()
 
-const initialState = {
-  loading: false,
-  error: false
-}
-
 export const UserProvider = ({children}) => {
-  //state 
-  const [state, dispatch] = useReducer(AuthReducer, initialState)
+  
+  function signup(email, password) {
+    // console.log(auth);
+    return createUserWithEmailAndPassword(auth, email, password);
+  }
 
+  function updateUser(name) {
+    return updateProfile(auth.currentUser, {displayName: name})
+  }
+
+  function signin(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
 
   return (
-    <UserContext.Provider value={{}}>
+    <UserContext.Provider
+      value={{
+        signup,
+        updateUser,
+        signin,
+      }}
+    >
       {children}
     </UserContext.Provider>
-  )
+  );
 }

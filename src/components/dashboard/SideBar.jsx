@@ -8,7 +8,7 @@ import {
   ArrowRightOnRectangleIcon
 } from "@heroicons/react/24/outline";
 
-const SideBar = () => {
+const SideBar = ({active, setActive}) => {
   return (
     <>
       {/* desktop */}
@@ -26,25 +26,48 @@ const SideBar = () => {
         <ul className="flex flex-col gap-2 px-6">
           <Link
             to="/dashboard"
-            className="hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
+            className={`hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
+              active === "home" ? "bg-color-green-50" : ""
+            }`}
+            onClick={() => setActive("home")}
           >
-            <li className="flex items-center gap-1 ">
+            <li
+              className={`flex items-center gap-1 ${
+                active === "home" ? "text-black" : ""
+              }`}
+            >
               <HomeIcon className="w-6" />
               <span>Home</span>
             </li>
           </Link>
           <Link
             to="/login"
-            className="hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium"
+            className={`hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
+              active === "login" ? "bg-color-green-50" : ""
+            }`}
+            onClick={() => setActive("login")}
           >
-            <li className="flex items-center gap-1">
+            <li
+              className={`flex items-center gap-1 ${
+                active === "login" ? "text-black" : ""
+              }`}
+            >
               <ArrowRightOnRectangleIcon className="w-6" />
               <span>Login</span>
             </li>
           </Link>
-          <li className="flex items-center gap-1 hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium">
-            <ArrowLeftOnRectangleIcon className="w-6" />
-            <span>Logout</span>
+          <li
+            className={`flex items-center gap-1 hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
+              active === "logout" ? "bg-color-green-50" : ""
+            }`}
+            onClick={() => setActive("logout")}
+          >
+            <ArrowLeftOnRectangleIcon
+              className={`w-6 ${active === "logout" ? "text-black" : ""}`}
+            />
+            <span className={active === "logout" ? "text-black" : ""}>
+              Logout
+            </span>
           </li>
         </ul>
         {/* user profile */}

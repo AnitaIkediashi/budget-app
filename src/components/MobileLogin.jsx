@@ -3,10 +3,15 @@ import mobileLogin from '../assets/images/mobile-login.png'
 import { ArrowLongRightIcon, EnvelopeIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
-const MobileLogin = () => {
-
-  const [ShowPassword, setShowPassword] = useState(false);
-
+const MobileLogin = ({
+  formValues,
+  setFormValues,
+  ShowPassword,
+  setShowPassword,
+  isLoading,
+  setIsLoading,
+  navigate,
+}) => {
   return (
     <section className="w-full h-screen grid place-items-center ">
       <div className="w-full h-full ">
