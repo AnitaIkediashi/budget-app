@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import DashLogo from '../../assets/images/logo.png'
-import blankProfile from '../../assets/images/blank-profile.png'
+import DashLogo from "../../assets/images/logo.png";
+import blankProfile from "../../assets/images/blank-profile.png";
 import {
   HomeIcon,
   ArrowLeftOnRectangleIcon,
-  ArrowRightOnRectangleIcon
+  ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
+import { UserContext } from "../../context/UserAuth";
+import { toast } from "react-toastify";
 
-const SideBar = ({active, setActive}) => {
+const SideBar = ({ active, setActive, navigate }) => {
+  const {signout} = useContext(UserContext)
+
+  const handleLogout = async() => {
+    await signout()
+    toast.success('Logout succesfull')
+    navigate("/login")
+  }
+
   return (
     <>
       {/* desktop */}
@@ -100,10 +110,8 @@ const SideBar = ({active, setActive}) => {
             <ArrowRightOnRectangleIcon className="md:w-6 w-5" />
           </Link>
         </li>
-        <li className="bg-color-green-300 rounded-full p-3 md:p-4">
-          <Link to="/logout" className="text-color-white-100">
-            <ArrowLeftOnRectangleIcon className="md:w-6 w-5" />
-          </Link>
+        <li className="bg-color-green-300 rounded-full p-3 md:p-4 text-color-white-100" onClick={handleLogout}>
+          <ArrowLeftOnRectangleIcon className="md:w-6 w-5" />
         </li>
       </ul>
     </>

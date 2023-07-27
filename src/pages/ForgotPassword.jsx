@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import forgetImg from '../assets/images/forget.png'
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserAuth";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState('')
+  const {resetEmail} = useContext(UserContext)
+  const navigate = useNavigate()
+  const handleReset = async(email) => {
+    try {
+      await resetEmail(email);
+      toast.succes('Password reset successful')
+      // navigate("/login");
+    } catch (err) {
+      toast.error(err.message)
+    }
+  }
+
   return (
     <section className="w-full h-screen grid place-items-center">
       <div className="lg:w-1/2 md:w-[60%] w-[95%] lg:h-[85vh] h-fit flex px-3 pt-3 pb-6 items-center justify-center flex-col rounded-xl shadow-morp">
@@ -31,9 +46,13 @@ const ForgotPassword = () => {
               type="email"
               placeholder="Email"
               className="w-full h-14 px-10 bg-[#cde4b4] caret-dark-blue text-dark-blue font-medium focus:border-dark-blue outline-none focus:border rounded-lg "
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button className="bg-dark-green text-white font-semibold text-sm md:text-lg py-3 w-full rounded-lg lg:mt-5 mt-3">
+          <button className="bg-dark-green text-white font-semibold text-sm md:text-lg py-3 w-full rounded-lg lg:mt-5 mt-3"
+            onClick={handleReset}
+          >
             Send Instruction
           </button>
 

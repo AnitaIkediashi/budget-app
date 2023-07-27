@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'firebase/auth'
+import {createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile} from 'firebase/auth'
 import {auth} from '../firebase'
 
 export const UserContext = createContext()
@@ -19,12 +19,22 @@ export const UserProvider = ({children}) => {
     return signInWithEmailAndPassword(auth, email, password);
   }
 
+  function signout() {
+    return signOut(auth);
+  }
+
+  function resetEmail(email) {
+    return sendPasswordResetEmail(auth, email);
+  }
+
   return (
     <UserContext.Provider
       value={{
         signup,
         updateUser,
         signin,
+        signout,
+        resetEmail,
       }}
     >
       {children}
