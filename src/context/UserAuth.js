@@ -27,6 +27,10 @@ export const UserProvider = ({children}) => {
     return sendPasswordResetEmail(auth, email);
   }
 
+  function getCurrentUser() {
+    
+  }
+
   return (
     <UserContext.Provider
       value={{

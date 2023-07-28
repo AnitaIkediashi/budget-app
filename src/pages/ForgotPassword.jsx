@@ -9,11 +9,12 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState('')
   const {resetEmail} = useContext(UserContext)
   const navigate = useNavigate()
-  const handleReset = async(email) => {
+  const handleReset = async(e) => {
+    e.preventDefault()
     try {
       await resetEmail(email);
-      toast.succes('Password reset successful')
-      // navigate("/login");
+      toast.success('Password reset successful')
+      navigate("/login");
     } catch (err) {
       toast.error(err.message)
     }
