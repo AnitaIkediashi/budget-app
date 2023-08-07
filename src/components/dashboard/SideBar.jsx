@@ -9,15 +9,17 @@ import {
 } from "@heroicons/react/24/outline";
 import { UserContext } from "../../context/UserAuth";
 import { toast } from "react-toastify";
+import MobileNav from "./MobileNav";
 
 const SideBar = ({ active, setActive, navigate }) => {
-  const {signout} = useContext(UserContext)
+  const { signout, user } = useContext(UserContext);
 
-  const handleLogout = async() => {
-    await signout()
-    toast.success('Logout succesfull')
-    navigate("/login")
-  }
+  const handleLogout = async () => {
+    console.log("signout");
+    await signout();
+    toast.success("Logout succesfull");
+    navigate("/login");
+  };
 
   return (
     <>
@@ -55,7 +57,9 @@ const SideBar = ({ active, setActive, navigate }) => {
             className={`hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
               active === "login" ? "bg-color-green-50" : ""
             }`}
-            onClick={() => setActive("login")}
+            onClick={() => 
+              setActive("login")
+            }
           >
             <li
               className={`flex items-center gap-1 ${
@@ -67,10 +71,10 @@ const SideBar = ({ active, setActive, navigate }) => {
             </li>
           </Link>
           <li
-            className={`flex items-center gap-1 hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
+            className={`flex items-center gap-1 hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium cursor-pointer ${
               active === "logout" ? "bg-color-green-50" : ""
             }`}
-            onClick={() => setActive("logout")}
+            onClick={handleLogout}
           >
             <ArrowLeftOnRectangleIcon
               className={`w-6 ${active === "logout" ? "text-black" : ""}`}
@@ -89,7 +93,7 @@ const SideBar = ({ active, setActive, navigate }) => {
           />
           <div className="flex flex-col ">
             <h4 className="inline-block font-medium text-color-white-100">
-              John Doe
+              {user.displayName}
             </h4>
             <small className="font-extralight text-color-green-50">
               Profession
@@ -99,21 +103,7 @@ const SideBar = ({ active, setActive, navigate }) => {
       </div>
 
       {/* mobile */}
-      <ul className="fixed left-1/2 -translate-x-1/2 bottom-10 bg-[rgba(0,0,0,0.3)] md:w-[15rem] w-[12rem] md:h-20 h-16 backdrop-blur-sm rounded-lg lg:hidden flex items-center justify-evenly md:gap-2">
-        <li className="bg-color-green-300 rounded-full p-3 md:p-4">
-          <Link to="/" className="text-color-white-100">
-            <HomeIcon className="md:w-6 w-5" />
-          </Link>
-        </li>
-        <li className="bg-color-green-300 rounded-full p-3 md:p-4">
-          <Link to="/login" className="text-color-white-100">
-            <ArrowRightOnRectangleIcon className="md:w-6 w-5" />
-          </Link>
-        </li>
-        <li className="bg-color-green-300 rounded-full p-3 md:p-4 text-color-white-100" onClick={handleLogout}>
-          <ArrowLeftOnRectangleIcon className="md:w-6 w-5" />
-        </li>
-      </ul>
+      <MobileNav navigate={navigate} />
     </>
   );
 };

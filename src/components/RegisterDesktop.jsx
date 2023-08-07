@@ -6,6 +6,7 @@ import {
   EyeSlashIcon,
   EyeIcon,
   UserCircleIcon,
+  HomeIcon
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserAuth";
@@ -138,6 +139,14 @@ const RegisterDesktop = ({
               className="w-full h-full object-cover"
             />
           </div>
+          <button className="bg-color-green-200 absolute bottom-16 left-8 p-3 rounded-full hover:bg-color-green-50 duration-300">
+            <Link
+              to="/"
+              className="text-dull-white hover:text-black duration-300"
+            >
+              <HomeIcon className="w-6" />
+            </Link>
+          </button>
         </div>
       </section>
     </>

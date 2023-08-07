@@ -53,7 +53,7 @@ const MobileRegister = ({
   return (
     <>
       {isLoading && <Loader />}
-      <section className="w-full h-screen grid place-items-center ">
+      <section className="w-full h-screen grid place-items-center overflow-y-scroll">
         <div className="w-full h-full ">
           {/* image */}
           <div className="w-full h-[40vh] grid place-items-center mb-16 md:mb-32">
@@ -64,7 +64,7 @@ const MobileRegister = ({
             />
           </div>
           {/* content form*/}
-          <form className="flex flex-col gap-5 px-8 bg-dark-blue w-full h-[60vh] rounded-tl-[5rem] rounded-tr-[5rem] pb-4">
+          <form className="flex flex-col gap-5 px-8 bg-dark-blue w-full md:h-[60vh] sm:h-full rounded-tl-[5rem] rounded-tr-[5rem] pb-8">
             <h1 className="text-white font-bold md:text-3xl text-2xl mb-4 pt-8">
               Register Here!
             </h1>
