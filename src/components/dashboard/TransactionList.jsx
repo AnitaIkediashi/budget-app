@@ -9,16 +9,23 @@ const TransactionList = ({transaction}) => {
 
   return (
     <li className="mb-3 flex items-center justify-between py-2">
-      <h4 className="font-semibold text-lg capitalize">{transaction.text}</h4>
+      <h4 className="font-semibold text-lg capitalize dark:text-gray-50">
+        {transaction.text}
+      </h4>
       <div className="flex items-center gap-4">
         <p
           className={`font-medium ${
-            transaction.amount < 0 ? "text-red-600" : "text-green-600 "
+            transaction.amount < 0
+              ? "text-red-600 dark:text-red-200"
+              : "text-green-600 dark:text-green-200"
           }`}
         >
           {sign}${Math.abs(transaction.amount)}
         </p>
-        <button className="text-white bg-color-green-200 p-1 rounded-md" onClick={() => deleteTransaction(transaction.id)}>
+        <button
+          className="text-white bg-color-green-200 p-1 rounded-md"
+          onClick={() => deleteTransaction(transaction.id)}
+        >
           <TrashIcon className="w-6" />
         </button>
       </div>

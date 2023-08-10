@@ -10,7 +10,7 @@ import logo from '../../assets/images/logo.png'
 import AddTransactions from "./AddTransactions";
 
 
-const MainBar = () => {
+const MainBar = ({darkMode, toggleDarkMode}) => {
   return (
     <>
       <section className="h-full overflow-y-scroll overflow-x-hidden hide-scroll lg:px-7">
@@ -19,7 +19,7 @@ const MainBar = () => {
           <Link to="/">
             <img src={logo} alt="logo" className="w-20" />
           </Link>
-          <Theme />
+          <Theme darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </div>
         <div className="lg:hidden items-center justify-center mt-7 flex">
           <Greeting />
@@ -27,7 +27,7 @@ const MainBar = () => {
         {/* box 1 */}
         <div className="lg:flex items-center justify-between mt-8 hidden">
           <Greeting />
-          <Theme />
+          <Theme darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         </div>
         {/* box 2 */}
         <div className="mt-20 grid lg:grid-cols-2 grid-cols-1 gap-3 mb-10">
@@ -42,7 +42,7 @@ const MainBar = () => {
         </div>
         {/* box 4 */}
         <div className=" mb-10">
-          <AddTransactions />
+          <AddTransactions darkMode={darkMode} />
         </div>
       </section>
     </>

@@ -87,3 +87,7 @@ input::-webkit-inner-spin-button {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark {
+  @apply bg-slate-950 
+}

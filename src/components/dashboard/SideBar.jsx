@@ -22,9 +22,9 @@ const SideBar = ({ active, setActive, navigate }) => {
   };
 
   return (
-    <>
+    <aside >
       {/* desktop */}
-      <div className="bg-color-green-300 h-full rounded-2xl shadow-[3px_4px_6px_0px_rgba(0,0,0,0.25)] lg:block hidden px-4 relative">
+      <div className="bg-color-green-300 h-full rounded-2xl shadow-[3px_4px_6px_0px_rgba(0,0,0,0.25)] lg:block hidden px-4 relative dark:bg-slate-800">
         {/* logo */}
         <div className="flex items-center justify-center w-full mt-3 mb-16">
           <Link to="/dashboard" className="flex items-center">
@@ -104,7 +104,7 @@ const SideBar = ({ active, setActive, navigate }) => {
 
       {/* mobile */}
       <MobileNav navigate={navigate} />
-    </>
+    </aside>
   );
 };
 

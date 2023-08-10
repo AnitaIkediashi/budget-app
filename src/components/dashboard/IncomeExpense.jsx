@@ -23,14 +23,14 @@ const IncomeExpense = () => {
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 gap-3">
       <UtilCard className="flex items-center flex-col justify-center">
-        <ArrowUpRightIcon className="w-6" />
-        <h3 className="text-color-green-300 font-bold text-lg">Income</h3>
-        <h4 className="text-xl font-medium">${income}</h4>
+        <ArrowUpRightIcon className="w-6 dark:text-gray-50" />
+        <h3 className="text-color-green-300 font-bold text-lg dark:text-green-200">Income</h3>
+        <h4 className="text-xl font-medium dark:text-gray-50">${income}</h4>
       </UtilCard>
       <UtilCard className="flex items-center flex-col justify-center">
-        <ArrowDownRightIcon className="w-6" />
-        <h3 className="text-red-500 font-bold text-lg">Expense</h3>
-        <h4 className="text-xl font-medium">${expense}</h4>
+        <ArrowDownRightIcon className="w-6 dark:text-gray-50" />
+        <h3 className="text-red-500 font-bold text-lg dark:text-red-200">Expense</h3>
+        <h4 className="text-xl font-medium dark:text-gray-50">${expense}</h4>
       </UtilCard>
     </div>
   );

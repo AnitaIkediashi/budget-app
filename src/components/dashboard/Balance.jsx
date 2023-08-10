@@ -16,9 +16,9 @@ const Balance = () => {
 
   return (
     <UtilCard className="flex items-center flex-col justify-center">
-      <CurrencyDollarIcon className="w-6" />
-      <h3 className=" font-bold text-lg">Balance</h3>
-      <h4 className="text-xl font-medium">${total}</h4>
+      <CurrencyDollarIcon className="w-6 dark:text-gray-50" />
+      <h3 className=" font-bold text-lg dark:text-gray-50">Balance</h3>
+      <h4 className="text-xl font-medium dark:text-gray-50">${total}</h4>
     </UtilCard>
   );
 };
