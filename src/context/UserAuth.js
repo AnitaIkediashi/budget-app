@@ -39,7 +39,7 @@ export const UserProvider = ({children}) => {
       }
     })
     
-  }, [])
+  }, [user])
 
   return (
     <UserContext.Provider
