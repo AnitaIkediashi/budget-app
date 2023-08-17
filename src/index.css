@@ -91,3 +91,11 @@ input::-webkit-inner-spin-button {
 .dark {
   @apply bg-slate-950 
 }
+
+.show_input {
+  @apply bg-color-white-100 shadow-lg p-4 md:w-64 w-60 fixed right-8 lg:top-28 top-20 rounded-lg  origin-top scale-y-0 ease-in duration-300 opacity-0 invisible
+}
+
+.hide_input {
+  @apply scale-y-100 opacity-100 visible
+}

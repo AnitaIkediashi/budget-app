@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import { LoginDesktop, MobileLogin } from "../components";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({
+ 
+}) => {
   const [ShowPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const onChangePassword = () => {
+    setShowPassword(prev => !prev)
+  }
   const navigate = useNavigate();
 
   return (
@@ -17,7 +22,8 @@ const Login = () => {
       <section className="hidden lg:block">
         <LoginDesktop
           ShowPassword={ShowPassword}
-          setShowPassword={setShowPassword}
+          // setShowPassword={setShowPassword}
+          onChangePassword={onChangePassword}
           formValues={formValues}
           setFormValues={setFormValues}
           isLoading={isLoading}
@@ -30,7 +36,8 @@ const Login = () => {
       <section className="block lg:hidden">
         <MobileLogin
           ShowPassword={ShowPassword}
-          setShowPassword={setShowPassword}
+          // setShowPassword={setShowPassword}
+          onChangePassword={onChangePassword}
           formValues={formValues}
           setFormValues={setFormValues}
           isLoading={isLoading}

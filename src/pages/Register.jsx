@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { MobileRegister, RegisterDesktop } from "../components";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register = ({
+  
+}) => {
   const [ShowPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues]  = useState({
     name: '',
@@ -11,7 +13,10 @@ const Register = () => {
   })
   const [error, setError] = useState({});
   const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const onChangePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   return (
     <>
@@ -19,7 +24,8 @@ const Register = () => {
       <section className="hidden lg:block">
         <RegisterDesktop
           ShowPassword={ShowPassword}
-          setShowPassword={setShowPassword}
+          // setShowPassword={setShowPassword}
+          onChangePassword={onChangePassword}
           formValues={formValues}
           setFormValues={setFormValues}
           error={error}
@@ -34,7 +40,8 @@ const Register = () => {
       <section className="block lg:hidden">
         <MobileRegister
           ShowPassword={ShowPassword}
-          setShowPassword={setShowPassword}
+          // setShowPassword={setShowPassword}
+          onChangePassword={onChangePassword}
           formValues={formValues}
           setFormValues={setFormValues}
           error={error}

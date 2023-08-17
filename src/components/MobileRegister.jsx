@@ -14,17 +14,16 @@ import Loader from "./Loader";
 import { toast } from "react-toastify";
 
 const MobileRegister = ({
+  ShowPassword,
+  onChangePassword,
   formValues,
   setFormValues,
-  ShowPassword,
-  setShowPassword,
-  error,
-  setError,
   isLoading,
   setIsLoading,
+  error,
+  setError,
   navigate,
 }) => {
-
   const { signup, updateUser } = useContext(UserContext);
 
   const { email, name, password } = formValues;
@@ -96,12 +95,14 @@ const MobileRegister = ({
               {ShowPassword ? (
                 <EyeIcon
                   className="w-5 absolute left-0 top-1/2 -translate-y-1/2 text-dull-white"
-                  onClick={() => setShowPassword(!ShowPassword)}
+                  // onClick={() => setShowPassword(!ShowPassword)}
+                  onClick={onChangePassword}
                 />
               ) : (
                 <EyeSlashIcon
                   className="w-5 absolute left-0 top-1/2 -translate-y-1/2 text-dull-white"
-                  onClick={() => setShowPassword(!ShowPassword)}
+                  // onClick={() => setShowPassword(!ShowPassword)}
+                  onClick={onChangePassword}
                 />
               )}
 

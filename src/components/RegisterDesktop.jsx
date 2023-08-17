@@ -15,14 +15,14 @@ import Loader from "./Loader";
 import { toast } from "react-toastify";
 
 const RegisterDesktop = ({
+  ShowPassword,
+  onChangePassword,
   formValues,
   setFormValues,
-  ShowPassword,
-  setShowPassword,
-  error,
-  setError,
   isLoading,
   setIsLoading,
+  error,
+  setError,
   navigate
 }) => {
   const { signup, updateUser } = useContext(UserContext);
@@ -92,12 +92,14 @@ const RegisterDesktop = ({
                 {ShowPassword ? (
                   <EyeIcon
                     className="w-5 absolute left-3 top-1/2 -translate-y-1/2 text-dark-green"
-                    onClick={() => setShowPassword(!ShowPassword)}
+                    // onClick={() => setShowPassword(!ShowPassword)}
+                    onClick={onChangePassword}
                   />
                 ) : (
                   <EyeSlashIcon
                     className="w-5 absolute left-3 top-1/2 -translate-y-1/2 text-dark-green"
-                    onClick={() => setShowPassword(!ShowPassword)}
+                    // onClick={() => setShowPassword(!ShowPassword)}
+                    onClick={onChangePassword}
                   />
                 )}
 

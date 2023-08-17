@@ -13,16 +13,15 @@ import { toast } from "react-toastify";
 import Loader from "./Loader";
 
 const LoginDesktop = ({
+  ShowPassword,
+  onChangePassword,
   formValues,
   setFormValues,
-  ShowPassword,
-  setShowPassword,
   isLoading,
   setIsLoading,
   navigate,
 }) => {
-
-  const {signin} = useContext(UserContext)
+  const { signin } = useContext(UserContext);
 
   const { email, password } = formValues;
 
@@ -44,7 +43,6 @@ const LoginDesktop = ({
       toast.error(error.message);
     }
   };
-
 
   return (
     <>
@@ -83,12 +81,14 @@ const LoginDesktop = ({
                 {ShowPassword ? (
                   <EyeIcon
                     className="w-5 absolute left-3 top-1/2 -translate-y-1/2 text-dark-green"
-                    onClick={() => setShowPassword(!ShowPassword)}
+                    // onClick={() => setShowPassword(!ShowPassword)}
+                    onClick={onChangePassword}
                   />
                 ) : (
                   <EyeSlashIcon
                     className="w-5 absolute left-3 top-1/2 -translate-y-1/2 text-dark-green"
-                    onClick={() => setShowPassword(!ShowPassword)}
+                    // onClick={() => setShowPassword(!ShowPassword)}
+                    onClick={onChangePassword}
                   />
                 )}
 

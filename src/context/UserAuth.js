@@ -5,20 +5,21 @@ import {auth} from '../firebase'
 export const UserContext = createContext()
 
 export const UserProvider = ({children}) => {
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState({})
 
   function signup(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
-  }
-
-  function updateUser(name) {
-    return updateProfile(auth.currentUser, {displayName: name})
   }
 
   function signin(email, password) {
     // console.log(auth);
     return signInWithEmailAndPassword(auth, email, password);
   }
+
+  function updateUser(name) {
+    return updateProfile(auth.currentUser, {displayName: name})
+  }
+
 
   function signout() {
     // console.log(auth);
@@ -30,13 +31,14 @@ export const UserProvider = ({children}) => {
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)
+    onAuthStateChanged(auth, (currentUser) => {
+      if(currentUser) {
+        setUser(currentUser)
+      } else {
+        console.log("user not logged in")
+      }
     })
-    //clean up function
-    return () => {
-      unsubscribe()
-    }
+    
   }, [])
 
   return (
