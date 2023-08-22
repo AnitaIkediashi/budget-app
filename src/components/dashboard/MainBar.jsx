@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Greeting from "./Greeting";
 import Theme from "./Theme";
 import Balance from "./Balance";
@@ -10,7 +10,12 @@ import logo from '../../assets/images/logo.png'
 import AddTransactions from "./AddTransactions";
 
 
-const MainBar = ({darkMode, toggleDarkMode, photo, open, handleOpen}) => {
+const MainBar = ({darkMode, toggleDarkMode}) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
     <>
       <section className="h-full overflow-y-scroll overflow-x-hidden hide-scroll lg:px-7">
@@ -19,7 +24,14 @@ const MainBar = ({darkMode, toggleDarkMode, photo, open, handleOpen}) => {
           <Link to="/">
             <img src={logo} alt="logo" className="w-20" />
           </Link>
-          <Theme darkMode={darkMode} toggleDarkMode={toggleDarkMode} photo={photo} open={open} handleOpen={handleOpen} />
+          <Theme
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            // photoUrl={photoUrl}
+            open={open}
+            handleOpen={handleOpen}
+            // setPhotoUrl={setPhotoUrl}
+          />
         </div>
         <div className="lg:hidden items-center justify-center mt-7 flex">
           <Greeting />
@@ -27,7 +39,14 @@ const MainBar = ({darkMode, toggleDarkMode, photo, open, handleOpen}) => {
         {/* box 1 */}
         <div className="lg:flex items-center justify-between mt-8 hidden">
           <Greeting />
-          <Theme darkMode={darkMode} toggleDarkMode={toggleDarkMode} photo={photo} open={open} handleOpen={handleOpen} />
+          <Theme
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            // photoUrl={photoUrl}
+            open={open}
+            handleOpen={handleOpen}
+            // setPhotoUrl={setPhotoUrl}
+          />
         </div>
         {/* box 2 */}
         <div className="mt-20 grid lg:grid-cols-2 grid-cols-1 gap-3 mb-10">

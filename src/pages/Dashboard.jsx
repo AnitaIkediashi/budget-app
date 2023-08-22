@@ -8,15 +8,12 @@ const Dashboard = () => {
   const [active, setActive] = useState("home");
   const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(true);
-  const [photo, setPhoto] = useState("");
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen((prev) => !prev);
-  };
+  // const [photoUrl, setPhotoUrl] = useState(null);
+
   const toggleDarkMode = () => {
     setDarkMode((prev) => !prev);
   };
-  
+
   return (
     <>
       <section
@@ -34,9 +31,8 @@ const Dashboard = () => {
           <MainBar
             darkMode={darkMode}
             toggleDarkMode={toggleDarkMode}
-            photo={photo}
-            open={open}
-            handleOpen={handleOpen}
+            // photoUrl={photoUrl}
+            // setPhotoUrl={setPhotoUrl}
           />
         </TransactionProvider>
       </section>

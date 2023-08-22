@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { LoginDesktop, MobileLogin } from "../components";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({
- 
-}) => {
+const Login = ({}) => {
   const [ShowPassword, setShowPassword] = useState(false);
   const [formValues, setFormValues] = useState({
     email: "",
@@ -12,8 +10,8 @@ const Login = ({
   });
   const [isLoading, setIsLoading] = useState(false);
   const onChangePassword = () => {
-    setShowPassword(prev => !prev)
-  }
+    setShowPassword((prev) => !prev);
+  };
   const navigate = useNavigate();
 
   return (

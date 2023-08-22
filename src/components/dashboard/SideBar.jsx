@@ -87,7 +87,7 @@ const SideBar = ({ active, setActive, navigate }) => {
         {/* user profile */}
         <aside className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 items-center w-[60%]">
           <img
-            src={blankProfile}
+            src={user?.photoURL}
             alt="blank profile"
             className="w-12 rounded-full"
           />
