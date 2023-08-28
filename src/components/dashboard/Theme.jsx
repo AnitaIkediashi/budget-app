@@ -1,48 +1,49 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
-import React, { useContext, useEffect } from "react";
-// import Avtr from "../../assets/images/blank-profile.png";
+import React, { useContext, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { UserContext } from "../../context/UserAuth";
 import { useState } from "react";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { storage } from "../../firebase";
+import { updateProfile } from "firebase/auth";
 
-const Theme = ({
-  darkMode,
-  toggleDarkMode,
-  open,
-  handleOpen,
-  // photoUrl,
-  // setPhotoUrl,
-}) => {
-
+const Theme = ({ darkMode, toggleDarkMode, open, handleOpen, setOpen }) => {
+  //default image
   const [photoURL, setPhotoURL] = useState(
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
   );
-  const [photo, setPhoto] = useState(null)
+  //updating the image profile
+  const [photo, setPhoto] = useState(null);
+  const resetRef = useRef();
 
   const onChangeImage = (e) => {
-    if(e.target.files[0]) {
-      setPhoto(e.target.files[0]);
+    const imageFile = e.target.files[0];
+    if (imageFile) {
+      setPhoto(imageFile);
     }
-    
   };
-  // console.log(photo)
+  
 
-  const { upload, user } = useContext(UserContext);
+  const { user, upload } = useContext(UserContext);
   // console.log(user)
   const [loading, setLoading] = useState(false);
 
   const handleUpload = () => {
-    if (!photo) {
-      toast.error("Upload an image");
-    }
-    upload(photo, user, setLoading);
-    
+    if (!photo) return;
+
+    upload(user, setLoading, photo, setPhotoURL);
+    handleResetImage();
+    setOpen(false);
   };
 
+  const handleResetImage = () => {
+    resetRef.current.value = "";
+  };
+
+  //use useEffect hook to update the profile pic once changed
   useEffect(() => {
     if (user?.photoURL) {
-      // console.log(user);
-      setPhotoURL(user.photoURL);
+      setPhotoURL(user?.photoURL);
     }
   }, [user]);
 
@@ -78,6 +79,7 @@ const Theme = ({
           className="block mb-2 dark:text-white"
           accept="image/*"
           onChange={onChangeImage}
+          ref={resetRef}
         />
         {/* button */}
         <button

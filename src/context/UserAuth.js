@@ -21,7 +21,6 @@ export const UserProvider = ({ children }) => {
   }
 
   function signin(email, password) {
-    // console.log(auth);
     return signInWithEmailAndPassword(auth, email, password);
   }
 
@@ -38,27 +37,37 @@ export const UserProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   }
 
-  async function upload(file, currentUser, setLoading) {
-    const storageRef = ref(storage, currentUser.uid);
+  function upload(currentUser, setLoading, file, setPhotoURL) {
+    const imageRef = ref(storage, currentUser.uid);
     setLoading(true);
-    
-    
-    await uploadBytes(storageRef, file);
-    const photoURL = await getDownloadURL(storageRef);
-    updateProfile(currentUser, { photoURL });
-    toast.success("profile updated successfully");
-    setLoading(false);
+    uploadBytes(imageRef, file)
+      .then(() => {
+        getDownloadURL(imageRef)
+          .then((url) => {
+            setPhotoURL(url);
+            updateProfile(user, { photoURL: url });
+            toast.success("profile updated successfully");
+            setLoading(false);
+            console.log(user?.photoURL);
+          })
+          .catch((err) => {
+            toast.error(err.message);
+          });
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }
 
   useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        console.log("user not logged in");
-      }
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      // console.log(currentUser);
+      setUser(currentUser);
     });
-  }, [user]);
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <UserContext.Provider

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import DashLogo from "../../assets/images/logo.png";
-import blankProfile from "../../assets/images/blank-profile.png";
 import {
   HomeIcon,
   ArrowLeftOnRectangleIcon,
@@ -21,8 +20,10 @@ const SideBar = ({ active, setActive, navigate }) => {
     navigate("/login");
   };
 
+ 
+
   return (
-    <aside >
+    <aside>
       {/* desktop */}
       <div className="bg-color-green-300 h-full rounded-2xl shadow-[3px_4px_6px_0px_rgba(0,0,0,0.25)] lg:block hidden px-4 relative dark:bg-slate-800">
         {/* logo */}
@@ -57,9 +58,7 @@ const SideBar = ({ active, setActive, navigate }) => {
             className={`hover:bg-color-green-50 hover:text-black p-3 rounded-lg duration-300 text-color-white-100 font-medium ${
               active === "login" ? "bg-color-green-50" : ""
             }`}
-            onClick={() => 
-              setActive("login")
-            }
+            onClick={() => setActive("login")}
           >
             <li
               className={`flex items-center gap-1 ${
@@ -85,11 +84,12 @@ const SideBar = ({ active, setActive, navigate }) => {
           </li>
         </ul>
         {/* user profile */}
-        <aside className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 items-center w-[60%]">
+        {/* <aside className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 items-center w-[60%]">
           <img
             src={user?.photoURL}
             alt="blank profile"
             className="w-12 rounded-full"
+            // ref={imageRef}
           />
           <div className="flex flex-col ">
             <h4 className="inline-block font-medium text-color-white-100">
@@ -99,7 +99,7 @@ const SideBar = ({ active, setActive, navigate }) => {
               Profession
             </small>
           </div>
-        </aside>
+        </aside> */}
       </div>
 
       {/* mobile */}

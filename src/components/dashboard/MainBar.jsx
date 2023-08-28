@@ -27,10 +27,9 @@ const MainBar = ({darkMode, toggleDarkMode}) => {
           <Theme
             darkMode={darkMode}
             toggleDarkMode={toggleDarkMode}
-            // photoUrl={photoUrl}
             open={open}
             handleOpen={handleOpen}
-            // setPhotoUrl={setPhotoUrl}
+            setOpen={setOpen}
           />
         </div>
         <div className="lg:hidden items-center justify-center mt-7 flex">
@@ -42,10 +41,9 @@ const MainBar = ({darkMode, toggleDarkMode}) => {
           <Theme
             darkMode={darkMode}
             toggleDarkMode={toggleDarkMode}
-            // photoUrl={photoUrl}
             open={open}
             handleOpen={handleOpen}
-            // setPhotoUrl={setPhotoUrl}
+            setOpen={setOpen}
           />
         </div>
         {/* box 2 */}
