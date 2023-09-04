@@ -3,26 +3,27 @@ import UtilCard from "../../utils/UtilCard";
 import { TransactionContext } from "../../context/BudgetTransactions";
 import { v4 } from "uuid";
 
-const AddTransactions = ({darkMode}) => {
-
-  const [text, setText] = useState('')
-  const [amount, setAmount] = useState(0)
+const AddTransactions = ({ darkMode }) => {
+  const [text, setText] = useState("");
+  const [amount, setAmount] = useState(0);
 
   const { addTransaction } = useContext(TransactionContext);
 
   const handleSubmit = () => {
-    //create a new transaction 
+    
+    //create a new transaction
     const newTransaction = {
       id: v4(),
       text,
-      amount: +amount //convert a string to a number
-    }
-    setText('')
-    setAmount(0)
+      amount: +amount, //convert a string to a number
+    };
+    setText("");
+    setAmount(0);
 
-    addTransaction(newTransaction)
-  }
-
+    addTransaction(newTransaction);
+    console.log("clicked heereee", newTransaction);
+    
+  };
 
   return (
     <UtilCard className="py-8 md:w-1/2 w-full">

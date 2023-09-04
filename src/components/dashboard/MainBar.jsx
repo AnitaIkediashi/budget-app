@@ -2,30 +2,28 @@ import React, { useContext, useEffect, useState } from "react";
 import Greeting from "./Greeting";
 import Theme from "./Theme";
 import Balance from "./Balance";
-import IncomeExpense from "./IncomeExpense";
 import CircleProgressBar from "./CircleProgressBar";
 import HistoryTransactions from "./HistoryTransactions";
 import { Link } from "react-router-dom";
-import logo from '../../assets/images/logo.png'
+import logo from "../../assets/images/logo.png";
 import AddTransactions from "./AddTransactions";
 import { TransactionContext } from "../../context/BudgetTransactions";
 
-
-const MainBar = ({darkMode, toggleDarkMode}) => {
+const MainBar = ({ darkMode, toggleDarkMode }) => {
   const [open, setOpen] = useState(false);
-  const [progress, setProgress] = useState(0)
-  const [color, setColor] = useState('')
+  const [progress, setProgress] = useState(0);
+  const [color, setColor] = useState("");
   const handleOpen = () => {
     setOpen((prev) => !prev);
   };
 
-  const {transactions} = useContext(TransactionContext)
+  const { transactions } = useContext(TransactionContext);
 
   useEffect(() => {
     const amount = transactions.map((transaction) => transaction.amount);
     const total = amount.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    const fixedAmount = (parseFloat('10000.00')) * 0.01
-    const percentTotal = total * 0.01
+    const fixedAmount = parseFloat("10000.00") * 0.01;
+    const percentTotal = total * 0.01;
     if (percentTotal >= fixedAmount) {
       setProgress(fixedAmount);
       setColor("#31572c");
@@ -39,8 +37,7 @@ const MainBar = ({darkMode, toggleDarkMode}) => {
       setProgress(percentTotal);
       setColor("#31572c");
     }
-  }, [transactions, setColor, setProgress])
-  
+  }, [transactions, setColor, setProgress]);
 
   const state = {
     size: 250,
@@ -81,10 +78,9 @@ const MainBar = ({darkMode, toggleDarkMode}) => {
           />
         </div>
         {/* box 2 */}
-        <div className="mt-20 grid lg:grid-cols-2 grid-cols-1 gap-3 mb-10">
-          <Balance />
-          <IncomeExpense />
-        </div>
+
+        <Balance />
+
         {/* box 3 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-10">
           {/* progress bar */}
