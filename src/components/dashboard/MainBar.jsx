@@ -78,7 +78,6 @@ const MainBar = ({ darkMode, toggleDarkMode }) => {
           />
         </div>
         {/* box 2 */}
-
         <Balance />
 
         {/* box 3 */}
