@@ -21,7 +21,7 @@ const AddTransactions = ({ darkMode }) => {
     setAmount(0);
 
     addTransaction(newTransaction);
-    console.log("clicked heereee", newTransaction);
+    // console.log("clicked heereee", newTransaction);
     
   };
 

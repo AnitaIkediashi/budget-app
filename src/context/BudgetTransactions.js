@@ -1,17 +1,18 @@
-import React, { createContext, useReducer } from "react";
-import BudgetReducer from './BudgetReducer'
+import React, { createContext, useEffect, useReducer } from "react";
+import BudgetReducer from "./BudgetReducer";
 
 //create initial state
 const initialState = {
-  transactions: [],
+  transactions: JSON.parse(localStorage.getItem("transactions")) || [],
+  
 };
 
 //create context
-export const TransactionContext = createContext(initialState)
+export const TransactionContext = createContext(initialState);
 
-//Provider component 
-export const TransactionProvider = ({children}) => {
-  const [state, dispatch] = useReducer(BudgetReducer, initialState)
+//Provider component
+export const TransactionProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(BudgetReducer, initialState);
 
   //actions
   function deleteTransaction(id) {
@@ -28,15 +29,20 @@ export const TransactionProvider = ({children}) => {
     });
   }
 
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(state.transactions))
+
+  }, [state.transactions]);
+
   return (
     <TransactionContext.Provider
       value={{
         transactions: state.transactions,
         deleteTransaction,
-        addTransaction
+        addTransaction,
       }}
     >
       {children}
     </TransactionContext.Provider>
   );
-}
+};

@@ -8,8 +8,7 @@ const BudgetReducer = (state, action) => {
         ),
       };
     case "ADD_TRANSACTION":
-      // addItemsToLocal(action.payload);
-      //localStorage.setItem("balance", JSON.stringify(action.payload));
+      
       return {
         ...state,
         transactions: [action.payload, ...state.transactions],

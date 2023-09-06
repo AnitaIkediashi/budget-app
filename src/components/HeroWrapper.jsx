@@ -21,7 +21,7 @@ const HeroWrapper = () => {
             Track Your Expenses, Save Money, and Reach Your Financial Goals
           </p>
           <div>
-            <button className="bg-light-green px-6 py-2 font-bold text-lg rounded-md">
+            <button className="bg-light-green px-6 py-2 font-bold text-lg rounded-md hover:bg-black hover:text-light-green duration-300">
               <Link to="/login">Learn More</Link>
             </button>
           </div>

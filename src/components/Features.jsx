@@ -2,16 +2,11 @@ import React from "react";
 import Header from "./Header";
 import IMG1 from '../assets/images/service-three.jpg'
 import IMG2 from '../assets/images/service-one.jpg'
-import Card from "./Card";
 import { features } from "../data";
-// import AOS from "aos";
+import Card from "../utils/Card";
 
 
 const Features = () => {
-  // useEffect(() => {
-  //   AOS.init();
-    
-  // }, [])
 
   return (
     <section className="py-14 px-8 lg:px-[7%]" id="features">

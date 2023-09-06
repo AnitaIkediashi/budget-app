@@ -1,11 +1,7 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import React, { useContext, useEffect, useRef } from "react";
-import { toast } from "react-toastify";
 import { UserContext } from "../../context/UserAuth";
 import { useState } from "react";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { storage } from "../../firebase";
-import { updateProfile } from "firebase/auth";
 
 const Theme = ({ darkMode, toggleDarkMode, open, handleOpen, setOpen }) => {
   //default image
@@ -47,6 +43,7 @@ const Theme = ({ darkMode, toggleDarkMode, open, handleOpen, setOpen }) => {
     }
   }, [user]);
 
+
   return (
     <>
       <div className="flex items-center gap-6 ">
@@ -83,7 +80,7 @@ const Theme = ({ darkMode, toggleDarkMode, open, handleOpen, setOpen }) => {
         />
         {/* button */}
         <button
-          className="bg-color-green-200 capitalize px-5 py-2 rounded-lg text-dull-white font-semibold dark:bg-color-green-300"
+          className="bg-color-green-200 capitalize px-5 py-2 rounded-lg text-dull-white font-semibold dark:bg-color-green-300 hover:bg-color-green-300 duration-300"
           disabled={loading || !photo}
           onClick={handleUpload}
         >
