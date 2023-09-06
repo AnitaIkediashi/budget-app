@@ -16,8 +16,11 @@ const CircleProgressBar = (props) => {
   }, [dashArray, progress]);
 
   return (
-    <UtilCard className="flex items-center justify-center">
-      <svg width={size} height={size} className="-rotate-90">
+    <UtilCard className="flex items-center justify-center ">
+      <svg
+        viewBox={`0 0 ${size} ${size}`}
+        className="-rotate-90 lg:w-[40%] lg:h-[40%] w-[50%] h-[50%]"
+      >
         {/* circle1 */}
         <circle
           cx={center}
