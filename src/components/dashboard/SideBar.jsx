@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import MobileNav from "./MobileNav";
 
 const SideBar = ({ active, setActive, navigate }) => {
-  const { signout, user } = useContext(UserContext);
+  const { signout} = useContext(UserContext);
 
   const handleLogout = async () => {
     console.log("signout");
