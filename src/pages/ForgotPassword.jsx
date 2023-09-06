@@ -21,8 +21,8 @@ const ForgotPassword = () => {
   }
 
   return (
-    <section className="w-full h-screen grid place-items-center">
-      <div className="lg:w-1/2 md:w-[60%] w-[95%] lg:h-[85vh] h-fit flex px-3 pt-3 pb-6 items-center justify-center flex-col rounded-xl shadow-morp">
+    <section className="w-[90%] h-screen flex mx-auto items-center justify-center overflow-x-hidden">
+      <div className=" lg:h-[95%] md:h-[60%] lg:w-1/2 m-auto flex px-3 pt-3 pb-6 items-center justify-center flex-col rounded-xl shadow-morp">
         {/* image */}
         <div className="w-[16rem] xl:w-[20rem]">
           <img
@@ -57,7 +57,7 @@ const ForgotPassword = () => {
             Send Instruction
           </button>
 
-          <div className="mt-10 self-start text-dark-blue font-semibold lg:text-lg md:text-base text-sm hover:underline duration-300 hover:tracking-widest">
+          <div className="mt-10 lg:mt-5 self-start text-dark-blue font-semibold lg:text-lg md:text-base text-sm hover:underline duration-300 hover:tracking-widest">
             <Link to="/login">Back to Login</Link>
           </div>
         </div>
