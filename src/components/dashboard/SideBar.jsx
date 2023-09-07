@@ -23,9 +23,9 @@ const SideBar = ({ active, setActive, navigate }) => {
  
 
   return (
-    <aside>
+    <>
       {/* desktop */}
-      <div className="bg-color-green-300 h-full rounded-2xl shadow-[3px_4px_6px_0px_rgba(0,0,0,0.25)] lg:block hidden px-4 relative dark:bg-slate-800">
+      <aside className="bg-color-green-300 h-full rounded-2xl shadow-[3px_4px_6px_0px_rgba(0,0,0,0.25)] lg:block hidden px-4 relative dark:bg-slate-800">
         {/* logo */}
         <div className="flex items-center justify-center w-full mt-3 mb-16">
           <Link to="/dashboard" className="flex items-center">
@@ -83,28 +83,12 @@ const SideBar = ({ active, setActive, navigate }) => {
             </span>
           </li>
         </ul>
-        {/* user profile */}
-        {/* <aside className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 items-center w-[60%]">
-          <img
-            src={user?.photoURL}
-            alt="blank profile"
-            className="w-12 rounded-full"
-            // ref={imageRef}
-          />
-          <div className="flex flex-col ">
-            <h4 className="inline-block font-medium text-color-white-100">
-              {user.displayName}
-            </h4>
-            <small className="font-extralight text-color-green-50">
-              Profession
-            </small>
-          </div>
-        </aside> */}
-      </div>
+        
+      </aside>
 
       {/* mobile */}
       <MobileNav navigate={navigate} />
-    </aside>
+    </>
   );
 };
 
